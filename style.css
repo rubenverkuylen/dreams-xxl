@@ -170,6 +170,10 @@ footer {
   margin-bottom: calc(0.5 * var(--padding));
 }
 
+.week-title h1 {
+  position: absolute;
+}
+
 .week-date {
   display: flex;
   flex-direction: column;
@@ -249,6 +253,9 @@ li:before {
   .main-container {
     grid-template-columns: 1fr;
     margin-top: calc(2 * var(--padding));
+  }
+  header {
+    font-size: 1em;
   }
   #header-date {
     display: inline-block;

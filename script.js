@@ -29,17 +29,24 @@ function clickHeader(elem) {
 
 // 3. open menu
 function openMenu(e) {
-  works.classList.add("hide");
-  about.classList.remove("hide");
+  topFunction();
   openModal.classList.add("hide");
   closeModal.classList.remove("hide");
+  works.classList.add("hide");
+  about.classList.remove("hide");
 }
 
 function closeMenu(e) {
-  about.classList.add("hide");
-  works.classList.remove("hide");
+  topFunction();
   openModal.classList.remove("hide");
   closeModal.classList.add("hide");
+  about.classList.add("hide");
+  works.classList.remove("hide");
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 openModal.addEventListener("click", openMenu);
