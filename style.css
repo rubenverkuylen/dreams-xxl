@@ -196,9 +196,6 @@ li:before {
   .work-content {
     grid-template-columns: 1fr;
   }
-  .about {
-    position: absolute;
-  }
 }
 
 /* GENERAL */
