@@ -53,7 +53,7 @@ html:focus-within {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.25;
   padding: var(--padding);
   font-family: var(--main-font);
   font-size: var(--font-size);
@@ -115,7 +115,10 @@ h1 {
   justify-content: space-between;
 }
 
-#nav-date {
+header {
+  font-size: 1.25em;
+}
+#header-date {
   display: none;
 }
 
@@ -132,7 +135,7 @@ h1 {
 
 /* ABOUT */
 .about {
-  height: calc(100vh - 4.5em);
+  /* height: calc(100vh - 4.5em); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -142,6 +145,18 @@ h1 {
 
 .introduction {
   margin-bottom: var(--padding);
+}
+
+.introduction a {
+  background-color: var(--second-color);
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.introduction a:hover {
+  background-color: var(--main-color);
+  color: var(--second-color);
+  text-decoration: underline;
 }
 
 footer {
@@ -164,24 +179,9 @@ li:before {
   content: "";
   display: block;
   height: 1px;
-  background: rgb(0, 0, 0, 0.1);
+  background: rgb(0, 0, 0, 0.2);
   margin-bottom: 0.2em;
   margin-top: 0.2em;
-}
-
-.work-list {
-  pointer-events: none;
-}
-.work-list li {
-  pointer-events: auto;
-}
-.work-list:hover li {
-  opacity: 0.1;
-  transition: 0.3s;
-}
-.work-list:hover li:hover {
-  opacity: 1;
-  transition: 0.3s;
 }
 
 .work-header {
@@ -218,28 +218,59 @@ li:before {
   margin-bottom: calc(var(--padding) / 2);
 }
 
+@media only screen and (min-width: 801px) {
+  .about {
+    height: calc(100vh - 4.5em);
+  }
+  .introduction,
+  footer {
+    font-size: 1.3rem;
+  }
+  .work-list {
+    pointer-events: none;
+  }
+  .work-list li {
+    pointer-events: auto;
+  }
+  .work-list:hover li {
+    opacity: 0.2;
+    transition: 0.3s;
+  }
+  .work-list:hover li:hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
+}
+
 @media only screen and (max-width: 800px) {
+  :root {
+    --padding: 1em;
+  }
   .main-container {
     grid-template-columns: 1fr;
     margin-top: calc(2 * var(--padding));
+  }
+  #header-date {
+    display: inline-block;
   }
   .main-nav {
     position: fixed;
     z-index: 9;
     width: calc(100% - 2 * var(--padding));
+    top: var(--padding);
   }
-  .main-nav h3 {
+  header h3 {
     position: relative;
   }
-  #nav-date {
-    display: flex;
-  }
   .about {
-    height: calc(100vh - 6em);
     order: 2;
   }
+  .about main {
+    margin-bottom: calc(2 * var(--padding));
+  }
   .modals {
-    display: block;
+    display: flex;
+    margin-left: auto;
   }
   /* .week-title {
     color: white;
