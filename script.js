@@ -29,8 +29,8 @@ function clickHeader(elem) {
 
 // 3. open menu
 function openMenu(e) {
-  about.classList.remove("hide");
   works.classList.add("hide");
+  about.classList.remove("hide");
   openModal.classList.add("hide");
   closeModal.classList.remove("hide");
 }

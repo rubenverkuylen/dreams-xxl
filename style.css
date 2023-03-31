@@ -2,7 +2,7 @@
 :root {
   --main-color: white;
   --second-color: black;
-  --main-font: "Arial", "Helvetica", sans-serif;
+  --main-font: "Helvetica Neue", "Georgia", sans-serif;
   --font-size: 16px;
   --padding: 1.5em;
 }
@@ -27,6 +27,11 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  cursor: default;
+}
+
+code {
+  cursor: text;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -35,6 +40,8 @@ ol[role="list"],
 li {
   list-style: none;
   padding-inline-start: 0px;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 /* Set core root defaults */
@@ -72,6 +79,16 @@ select {
   font: inherit;
 }
 
+a,
+label,
+button,
+input[type="radio"],
+input[type="submit"],
+input[type="checkbox"] {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -89,7 +106,7 @@ select {
 }
 
 h1 {
-  /* line-height: 1; */
+  line-height: 1;
 }
 
 .main-nav {
@@ -111,7 +128,7 @@ h1 {
 
 /* ABOUT */
 .about {
-  height: calc(100vh - 6em);
+  height: calc(100vh - 4.5em);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -125,6 +142,8 @@ h1 {
 
 footer {
   font-size: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* WORKS */
@@ -142,9 +161,24 @@ li:before {
   content: "";
   display: block;
   height: 1px;
-  background: rgb(0, 0, 0, 0.2);
+  background: rgb(0, 0, 0, 0.1);
   margin-bottom: 0.2em;
   margin-top: 0.2em;
+}
+
+.work-list {
+  pointer-events: none;
+}
+.work-list li {
+  pointer-events: auto;
+}
+.work-list:hover li {
+  opacity: 0.1;
+  transition: 0.3s;
+}
+.work-list:hover li:hover {
+  opacity: 1;
+  transition: 0.3s;
 }
 
 .work-header {
@@ -155,6 +189,7 @@ li:before {
 
 .work-header:hover {
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .work-content {
@@ -189,6 +224,9 @@ li:before {
     position: fixed;
     z-index: 9;
     width: calc(100% - 2 * var(--padding));
+  }
+  .about {
+    height: calc(100vh - 6em);
   }
   .modals {
     display: block;
