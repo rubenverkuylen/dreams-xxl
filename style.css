@@ -87,6 +87,11 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+h1 {
+  /* line-height: 1; */
+}
+
 .main-nav {
   display: flex;
   width: 100%;
@@ -161,7 +166,7 @@ li:before {
 
 .work-content figure {
   width: 100%;
-  max-height: 250px;
+  height: 250px;
   background-color: var(--second-color);
   border-radius: 4px;
 }
@@ -178,6 +183,12 @@ li:before {
 @media only screen and (max-width: 800px) {
   .main-container {
     grid-template-columns: 1fr;
+    margin-top: calc(2 * var(--padding));
+  }
+  .main-nav {
+    position: fixed;
+    z-index: 9;
+    width: calc(100% - 2 * var(--padding));
   }
   .modals {
     display: block;

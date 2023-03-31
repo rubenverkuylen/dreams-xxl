@@ -1,6 +1,7 @@
 "use strict";
 // variables
 const workContent = document.querySelectorAll(".work-content");
+const works = document.getElementById("works-container");
 const about = document.getElementById("about-container");
 const openModal = document.getElementById("open-modal");
 const closeModal = document.getElementById("close-modal");
@@ -29,12 +30,14 @@ function clickHeader(elem) {
 // 3. open menu
 function openMenu(e) {
   about.classList.remove("hide");
+  works.classList.add("hide");
   openModal.classList.add("hide");
   closeModal.classList.remove("hide");
 }
 
 function closeMenu(e) {
   about.classList.add("hide");
+  works.classList.remove("hide");
   openModal.classList.remove("hide");
   closeModal.classList.add("hide");
 }
