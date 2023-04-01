@@ -270,6 +270,10 @@ img {
   footer {
     font-size: 1.3rem;
   }
+  footer {
+    position: fixed;
+    bottom: var(--padding);
+  }
   .work-list {
     pointer-events: none;
   }
@@ -322,6 +326,7 @@ img {
     display: flex;
     margin-left: auto;
   }
+
   /* .week-title {
     position: sticky;
     top: var(--padding);
