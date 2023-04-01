@@ -2,7 +2,7 @@
 :root {
   --main-color: white;
   --second-color: black;
-  --main-font: "Helvetica Neue", "Georgia", sans-serif;
+  --main-font: "Helvetica Neue", "Arial", sans-serif;
   --font-size: 16px;
   --padding: 1.5em;
 }
@@ -134,6 +134,15 @@ header {
 
 .modals {
   display: none;
+}
+
+.modals button {
+  background: none;
+  color: var(--second-color);
+  padding: 0 0.6em;
+  border: 2px black solid;
+  border-radius: 10px;
+  height: 40px;
 }
 
 .main-container {
@@ -287,6 +296,9 @@ img {
   }
   header {
     font-size: 1em;
+    display: flex;
+    align-items: center;
+    height: 40px;
   }
   #header-date {
     display: inline-block;
