@@ -191,12 +191,12 @@ address {
 }
 
 /* WORKS */
-.week-title {
-  margin-bottom: calc(0.5 * var(--padding));
-}
-
 .svg-week {
   position: absolute;
+}
+
+.week-info {
+  margin-top: calc(0.5 * var(--padding));
 }
 
 .week-date {
@@ -336,18 +336,19 @@ img {
     margin-left: auto;
   }
 
-  /* .week-title {
+  .week-title {
     position: sticky;
-    top: var(--padding);
-    z-index: 9;
-  } */
+    top: 0;
+    width: 80%;
+    /* z-index: 9; */
+  }
   .work-content {
     grid-template-columns: 1fr;
   }
   .svg-week {
     position: relative;
     top: 1.5em;
-    width: calc(100% - var(--padding));
+    /* width: calc(100% - var(--padding)); */
   }
 }
 
