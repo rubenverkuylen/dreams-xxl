@@ -40,7 +40,7 @@ ol[role="list"],
 li {
   list-style: none;
   padding-inline-start: 0px;
-  cursor: pointer;
+  /* cursor: pointer; */
   pointer-events: auto;
 }
 
@@ -123,6 +123,7 @@ a:hover {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  pointer-events: none;
 }
 
 header {
@@ -134,6 +135,7 @@ header {
 
 .modals {
   display: none;
+  pointer-events: auto;
 }
 
 .modals button {
@@ -142,7 +144,7 @@ header {
   padding: 0 0.6em;
   border: 2px black solid;
   border-radius: 10px;
-  height: 40px;
+  /* height: 40px; */
 }
 
 .main-container {
@@ -290,6 +292,12 @@ img {
   }
 }
 
+@media only screen and (max-width: 1100px) {
+  .work-content {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   :root {
     --padding: 1em;
@@ -299,10 +307,10 @@ img {
     margin-top: calc(2 * var(--padding));
   }
   header {
-    font-size: 1em;
+    font-size: 1.1em;
     display: flex;
     align-items: center;
-    height: 40px;
+    height: calc(2 * var(--padding));
   }
   #header-date {
     display: inline-block;
@@ -312,6 +320,7 @@ img {
     z-index: 9;
     width: calc(100% - 2 * var(--padding));
     top: var(--padding);
+    height: calc(2 * var(--padding));
   }
   header h3 {
     position: relative;
@@ -345,4 +354,8 @@ img {
 /* GENERAL */
 .hide {
   display: none;
+}
+
+.extra-margin {
+  margin-top: 50px;
 }
