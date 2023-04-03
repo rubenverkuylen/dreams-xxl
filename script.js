@@ -66,15 +66,6 @@ openModal.addEventListener("click", openMenu);
 closeModal.addEventListener("click", closeMenu);
 
 // 4. reset on browser resize
-window.addEventListener("resize", (e) => {
-  const width = e.target.outerWidth;
-  if (width >= 800) {
-    showAbout();
-  } else {
-    hideAbout();
-  }
-});
-
 function hideAbout() {
   about.classList.add("hide");
 }
@@ -84,9 +75,16 @@ function showAbout() {
   works.classList.remove("hide");
 }
 
-// 1. check if broweser gets resized
-// 2. if browser > 800px -> remove .hide from about
-// 3. if browser < 800px -> add .hide to about
+window.addEventListener("resize", (e) => {
+  const width = e.target.outerWidth;
+  if (width >= 800) {
+    showAbout();
+  }
+});
+
+if (window.outerWidth < 800) {
+  hideAbout();
+}
 
 // run on load
 (function () {

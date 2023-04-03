@@ -304,7 +304,6 @@ img {
   }
   .main-container {
     grid-template-columns: 1fr;
-    margin-top: calc(2 * var(--padding));
   }
   header {
     font-size: 1.1em;
@@ -327,6 +326,7 @@ img {
   }
   .about {
     order: 2;
+    margin-top: 1.5em;
   }
   .about main {
     margin-bottom: calc(2 * var(--padding));
