@@ -1,8 +1,9 @@
 /* reset/normalizer by https://piccalil.li/blog/a-modern-css-reset/ */
 :root {
-  --main-color: white;
+  --main-color: rgb(255, 255, 255);
   --second-color: black;
   --main-font: "Helvetica Neue", "Arial", sans-serif;
+  --grey: rgb(0, 0, 0, 0.3);
   --font-size: 16px;
   --padding: 1.5em;
 }
@@ -40,7 +41,6 @@ ol[role="list"],
 li {
   list-style: none;
   padding-inline-start: 0px;
-  /* cursor: pointer; */
   pointer-events: auto;
 }
 
@@ -56,7 +56,7 @@ body {
   line-height: 1.25;
   padding: var(--padding);
   font-family: var(--main-font);
-  font-size: var(--font-size);
+  background-color: var(--main-color);
 }
 
 /* A elements that don't have a class get default styles */
@@ -161,7 +161,13 @@ header {
   flex-direction: column;
   justify-content: space-between;
   flex: 2 1 0px;
-  background-color: white;
+  /* background-color: white; */
+}
+
+.about *,
+.week-title *,
+.work-description * {
+  filter: brightness(100) contrast(142);
 }
 
 .introduction {
@@ -178,6 +184,14 @@ header {
   background-color: var(--main-color);
   color: var(--second-color);
   text-decoration: underline;
+}
+
+.artists a {
+  margin-right: 0.25em;
+}
+
+#sponsors {
+  color: var(--grey);
 }
 
 footer {
@@ -204,13 +218,21 @@ address {
   flex-direction: column;
 }
 
-li:before {
+/* old listing */
+/* li:before {
   content: "";
   display: block;
   height: 1px;
   background: rgb(0, 0, 0, 0.2);
   margin-bottom: 0.2em;
   margin-top: 0.2em;
+} */
+
+li {
+  display: block;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+  border-top: rgb(0, 0, 0, 0.2) 1px solid;
 }
 
 .work-header {
@@ -248,8 +270,6 @@ li:before {
 
 img {
   display: block;
-  /* max-width: 230px;
-  max-height: 95px; */
   width: auto;
   height: auto;
 }
@@ -264,13 +284,31 @@ img {
   margin-bottom: calc(var(--padding) / 2);
 }
 
+.work-url a {
+  color: var(--grey);
+}
+.work-url a:hover {
+  background-color: var(--grey);
+  color: white;
+}
+
+@media only screen and (min-width: 1600px) {
+  body {
+    font-size: 20px;
+  }
+}
+
 @media only screen and (min-width: 801px) {
+  #about-container main {
+    position: fixed;
+    width: calc(50vw - 2 * var(--padding));
+  }
   .about {
     height: calc(100vh - 4.5em);
   }
   .introduction,
   footer {
-    font-size: 1.3rem;
+    font-size: 1.3em;
   }
   footer {
     position: fixed;
@@ -289,6 +327,9 @@ img {
   .work-list:hover li:hover {
     opacity: 1;
     transition: 0.3s;
+  }
+  .work-text {
+    min-height: 140px;
   }
 }
 
