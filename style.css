@@ -296,6 +296,9 @@ img {
   body {
     font-size: 20px;
   }
+  .svg-week {
+    stroke-width: 3;
+  }
 }
 
 @media only screen and (min-width: 801px) {
@@ -411,4 +414,14 @@ img {
 
 .extra-margin {
   margin-top: 50px;
+}
+
+.lazyload {
+  opacity: 0;
+}
+
+.lazyloading {
+  opacity: 1;
+  transition: opacity 300ms;
+  background: #f7f7f7 url(/img/loader.gif) no-repeat center;
 }
