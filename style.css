@@ -331,6 +331,9 @@ img {
   #week3 {
     margin-bottom: 0;
   }
+  .svg-week {
+    width: 48%;
+  }
   .work-list {
     pointer-events: none;
   }
